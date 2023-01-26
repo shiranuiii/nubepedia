@@ -31,7 +31,11 @@ export default function LoginPages() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label htmlFor="email">メールアドレス</label>
-          <input id="email" placeholder="johndoe@example.net" {...register("email")} />
+          <input
+            id="email"
+            placeholder="johndoe@example.net"
+            {...register("email")}
+          />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div>

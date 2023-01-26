@@ -17,10 +17,12 @@ const registerSchema = z
       .regex(/(?=.*[A-Za-z])(?=.*\d)/, {
         message: "半角アルファベットと半角数字を含んでください",
       }),
-    confirm: z.string().nonempty({ message: "パスワードをもう一度入力してください" }),
+    confirm: z
+      .string()
+      .nonempty({ message: "パスワードをもう一度入力してください" }),
     terms: z.boolean(),
   })
-  .refine(data => data.passwd === data.confirm, {
+  .refine((data) => data.passwd === data.confirm, {
     message: "パスワードが一致しません",
     path: ["confirm"],
   })

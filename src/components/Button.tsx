@@ -5,6 +5,11 @@ export default function Button({ children, ...props }: { children: ReactNode }) 
   return (
     <button
       css={css`
+        border: none;
+        background: red;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 0.5rem;
       `}
       {...props}>
       {children}
