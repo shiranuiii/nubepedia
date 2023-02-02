@@ -25,9 +25,9 @@ export default function Layout({ children }: { children: ReactNode }) {
           margin-top: auto;
           padding: 1rem 0;
           text-align: center;
-          background: dimgray;
-          color: white;
           font-weight: bold;
+          border-top: 1px solid #d3d3d3;
+          color: #696969;
         `}>
         &copy; 2023 majikiti
       </footer>

@@ -2,6 +2,7 @@ import { GetServerSideProps } from "next"
 import { useAtom } from "jotai"
 import { css } from "@emotion/react"
 
+import Button from "~/components/Button"
 import Layout from "~/components/Layout"
 import { getPosts, Post } from "~/models/Post"
 import { tempPostAtom } from "~/libs/atoms"
@@ -20,10 +21,12 @@ function PostPreview({ text, authorName }) {
     <div
       css={css`
         display: flex;
+        margin: 0.5rem;
         padding: 0.5rem;
         flex-direction: column;
         border-radius: 0.5rem;
-        border: 2px solid black;
+        border-top: 2px black;
+        background: #f2f2f2;
       `}
     >
       <span css={css``}>{authorName}</span>
@@ -34,11 +37,14 @@ function PostPreview({ text, authorName }) {
       />
       <p
         css={css`
-          font-size: 1.5rem;
+          font-size: 1.2rem;
         `}
       >
         {text}
       </p>
+      <div>
+        <Button onClick={() => navigator.clipboard.writeText(text)} >Copy</Button>
+      </div>
     </div>
   )
 }
