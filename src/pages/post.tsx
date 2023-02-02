@@ -24,8 +24,7 @@ function PostButton({ children, ...props }) {
           filter: drop-shadow(5px 5px 0 black);
         }
       `}
-      {...props}
-    >
+      {...props}>
       {children}
     </button>
   )
@@ -42,7 +41,7 @@ export default function PostPage() {
       text: body,
     }
     console.log(post)
-    setTempPost((posts) => [post, ...posts])
+    setTempPost(posts => [post, ...posts])
     router.push("/")
   }
 
