@@ -1,11 +1,11 @@
-import { GetServerSideProps } from "next"
-import { useAtom } from "jotai"
 import { css } from "@emotion/react"
+import { useAtom } from "jotai"
+import { GetServerSideProps } from "next"
 
 import Button from "~/components/Button"
 import Layout from "~/components/Layout"
-import { getPosts, Post } from "~/models/Post"
 import { tempPostAtom } from "~/libs/atoms"
+import { getPosts, Post } from "~/models/Post"
 
 type Props = {
   posts: Post[]
@@ -41,7 +41,9 @@ function PostPreview({ text, authorName }) {
         {text}
       </p>
       <div>
-        <Button onClick={() => navigator.clipboard.writeText(text)} >Copy</Button>
+        <Button onClick={() => navigator.clipboard.writeText(text)}>
+          Copy
+        </Button>
       </div>
     </div>
   )
@@ -49,7 +51,7 @@ function PostPreview({ text, authorName }) {
 
 export default function IndexPage({ posts }: Props) {
   const [tempPosts] = useAtom(tempPostAtom)
-  console.log(posts)
+
   return (
     <Layout>
       <h1>hello!</h1>

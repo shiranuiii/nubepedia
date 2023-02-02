@@ -1,5 +1,6 @@
 import { css } from "@emotion/react"
 import Link from "next/link"
+import { signIn, signOut, useSession } from "next-auth/react"
 
 import Button from "~/components/Button"
 
@@ -12,6 +13,8 @@ function Logo() {
 }
 
 export default function Header() {
+  const { data: session } = useSession()
+
   return (
     <header
       css={css`
@@ -28,9 +31,11 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <Link href="/login">
-          <Button>Login</Button>
-        </Link>
+        {session ? (
+          <Button onClick={signOut}>ログアウト</Button>
+        ) : (
+          <Button onClick={signIn}>ログイン</Button>
+        )}
       </div>
     </header>
   )
