@@ -11,7 +11,7 @@ export default function Button({
     <button
       css={css`
         border: none;
-        background: red;
+        background: #afeeee;
         padding: 10px;
         border-radius: 10px;
         margin: 0.5rem;

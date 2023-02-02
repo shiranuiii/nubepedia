@@ -6,7 +6,7 @@ import Button from "~/components/Button"
 function Logo() {
   return (
     <div>
-      <span>nubepedia</span>
+      <span>Nubepedia</span>
     </div>
   )
 }
@@ -17,7 +17,10 @@ export default function Header() {
       css={css`
         display: flex;
         justify-content: space-between;
-        background: aqua;
+        border-bottom: 1px solid #d3d3d3;
+        padding: 0.8rem;
+        font-size: 2rem;
+        font-family: Times New Roman;
       `}>
       <div>
         <Link href="/">
