@@ -3,6 +3,8 @@ import { ReactNode } from "react"
 
 import Header from "~/components/Header"
 
+import style from "./index.module.css"
+
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <div
@@ -20,15 +22,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Header />
         {children}
       </div>
-      <footer
-        css={css`
-          margin-top: auto;
-          padding: 1rem 0;
-          text-align: center;
-          background: dimgray;
-          color: white;
-          font-weight: bold;
-        `}>
+      <footer className={style.footer}>
         &copy; 2023 majikiti
       </footer>
     </div>
