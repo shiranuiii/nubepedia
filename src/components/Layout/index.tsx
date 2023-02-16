@@ -22,7 +22,15 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Header />
         {children}
       </div>
-      <footer className={style.footer}>
+      <footer
+        css={css`
+          margin-top: auto;
+          padding: 1rem 0;
+          text-align: center;
+          font-weight: bold;
+          border-top: 1px solid #d3d3d3;
+          color: #696969;
+        `}>
         &copy; 2023 majikiti
       </footer>
     </div>
